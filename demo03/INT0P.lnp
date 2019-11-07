@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"test.obj",
+"C:\dev\Keil\C51\LIB\C51S.LIB" 
+TO "INT0P" 
+RAMSIZE(256) 

@@ -1,0 +1,297 @@
+A51 MACRO ASSEMBLER  TEST                                                                 11/06/2019 11:20:30 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02
+OBJECT MODULE PLACED IN test.OBJ
+ASSEMBLER INVOKED BY: C:\dev\Keil\C51\BIN\A51.EXE test.src PR(.\test.ls1) EP DEBUG
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; .\test.SRC generated from: test.c
+                       2     ; COMPILER INVOKED BY:
+                       3     ;        C:\dev\Keil\C51\BIN\C51.EXE test.c BROWSE DEBUG OBJECTEXTEND SRC(.\test.SRC)
+                       4     
+                       5     $nomod51 
+                       6     
+                       7     NAME    TEST
+                       8     
+  0080                 9     P0      DATA    080H
+  0090                10     P1      DATA    090H
+  00A0                11     P2      DATA    0A0H
+  00B0                12     P3      DATA    0B0H
+  00B4                13     T0      BIT     0B0H.4
+  00D6                14     AC      BIT     0D0H.6
+  00B5                15     T1      BIT     0B0H.5
+  00AF                16     EA      BIT     0A8H.7
+  00A8                17     IE      DATA    0A8H
+  00B7                18     RD      BIT     0B0H.7
+  00AC                19     ES      BIT     0A8H.4
+  00B8                20     IP      DATA    0B8H
+  0098                21     RI      BIT     098H.0
+  00B2                22     INT0    BIT     0B0H.2
+  00D7                23     CY      BIT     0D0H.7
+  0099                24     TI      BIT     098H.1
+  00B3                25     INT1    BIT     0B0H.3
+  00BC                26     PS      BIT     0B8H.4
+  0081                27     SP      DATA    081H
+  00D2                28     OV      BIT     0D0H.2
+  00B6                29     WR      BIT     0B0H.6
+  0099                30     SBUF    DATA    099H
+  0087                31     PCON    DATA    087H
+  0098                32     SCON    DATA    098H
+  0089                33     TMOD    DATA    089H
+  0088                34     TCON    DATA    088H
+  0089                35     IE0     BIT     088H.1
+  008B                36     IE1     BIT     088H.3
+  00F0                37     B       DATA    0F0H
+  00E0                38     ACC     DATA    0E0H
+  00A9                39     ET0     BIT     0A8H.1
+  00AB                40     ET1     BIT     0A8H.3
+  008D                41     TF0     BIT     088H.5
+  008F                42     TF1     BIT     088H.7
+  009A                43     RB8     BIT     098H.2
+  008C                44     TH0     DATA    08CH
+  00A8                45     EX0     BIT     0A8H.0
+  0088                46     IT0     BIT     088H.0
+  008D                47     TH1     DATA    08DH
+  009B                48     TB8     BIT     098H.3
+  00AA                49     EX1     BIT     0A8H.2
+  008A                50     IT1     BIT     088H.2
+  00D0                51     P       BIT     0D0H.0
+  009F                52     SM0     BIT     098H.7
+  008A                53     TL0     DATA    08AH
+  009E                54     SM1     BIT     098H.6
+  008B                55     TL1     DATA    08BH
+  009D                56     SM2     BIT     098H.5
+  00B9                57     PT0     BIT     0B8H.1
+  00BB                58     PT1     BIT     0B8H.3
+A51 MACRO ASSEMBLER  TEST                                                                 11/06/2019 11:20:30 PAGE     2
+
+  00D3                59     RS0     BIT     0D0H.3
+  008C                60     TR0     BIT     088H.4
+  00D4                61     RS1     BIT     0D0H.4
+  008E                62     TR1     BIT     088H.6
+  00B8                63     PX0     BIT     0B8H.0
+  00BA                64     PX1     BIT     0B8H.2
+  0083                65     DPH     DATA    083H
+  0082                66     DPL     DATA    082H
+  009C                67     REN     BIT     098H.4
+  00B0                68     RXD     BIT     0B0H.0
+  00B1                69     TXD     BIT     0B0H.1
+  00D5                70     F0      BIT     0D0H.5
+  00D0                71     PSW     DATA    0D0H
+                      72     ?PR?init?TEST        SEGMENT CODE 
+                      73     ?PR?main?TEST        SEGMENT CODE 
+                      74     ?PR?I0?TEST          SEGMENT CODE 
+                      75             EXTRN   CODE (?C_STARTUP)
+                      76             PUBLIC  cLed
+                      77             PUBLIC  I0
+                      78             PUBLIC  main
+                      79             PUBLIC  init
+                      80     
+----                  81             DSEG  AT  020H
+0020                  82                cLed:   DS   1
+                      83     ; #include<reg51.h>
+                      84     ; 
+                      85     ; data unsigned char cLed _at_ 0x20;
+                      86     ; 
+                      87     ; void init()
+                      88     
+----                  89             RSEG  ?PR?init?TEST
+0000                  90     init:
+                      91                             ; SOURCE LINE # 5
+                      92     ; {
+                      93                             ; SOURCE LINE # 6
+                      94     ;       IT0=1;
+                      95                             ; SOURCE LINE # 7
+0000 D288             96             SETB    IT0
+                      97     ;       EX0=1;
+                      98                             ; SOURCE LINE # 8
+0002 D2A8             99             SETB    EX0
+                     100     ;       EA=1;
+                     101                             ; SOURCE LINE # 9
+0004 D2AF            102             SETB    EA
+                     103     ; }
+                     104                             ; SOURCE LINE # 10
+0006 22              105             RET     
+                     106     ; END OF init
+                     107     
+                     108     ; 
+                     109     ; void main()
+                     110     
+----                 111             RSEG  ?PR?main?TEST
+0000                 112     main:
+                     113                             ; SOURCE LINE # 12
+                     114     ; {
+                     115                             ; SOURCE LINE # 13
+                     116     ;       cLed = 0xfe;
+                     117                             ; SOURCE LINE # 14
+0000 7520FE          118             MOV     cLed,#0FEH
+                     119     ;       P2=cLed;
+                     120                             ; SOURCE LINE # 15
+0003 8520A0          121             MOV     P2,cLed
+                     122     ;       init();
+                     123                             ; SOURCE LINE # 16
+0006 120000   F      124             LCALL   init
+A51 MACRO ASSEMBLER  TEST                                                                 11/06/2019 11:20:30 PAGE     3
+
+0009                 125     ?C0002:
+                     126     ;       while(1);
+                     127                             ; SOURCE LINE # 17
+0009 80FE            128             SJMP    ?C0002
+                     129     ; END OF main
+                     130     
+----                 131     CSEG    AT      00003H
+0003 020000   F      132             LJMP    I0
+                     133     
+                     134     ; }
+                     135     ; 
+                     136     ; void I0() interrupt 0
+                     137     
+----                 138             RSEG  ?PR?I0?TEST
+                     139             USING   0
+0000                 140     I0:
+0000 C0E0            141             PUSH    ACC
+0002 C0F0            142             PUSH    B
+0004 C083            143             PUSH    DPH
+0006 C082            144             PUSH    DPL
+0008 C0D0            145             PUSH    PSW
+000A 75D000          146             MOV     PSW,#00H
+000D C000            147             PUSH    AR0
+000F C001            148             PUSH    AR1
+0011 C002            149             PUSH    AR2
+0013 C003            150             PUSH    AR3
+0015 C004            151             PUSH    AR4
+0017 C005            152             PUSH    AR5
+0019 C006            153             PUSH    AR6
+001B C007            154             PUSH    AR7
+                     155             USING   0
+                     156                             ; SOURCE LINE # 20
+                     157     ; {
+                     158     ;   # pragma asm
+                     159     ;       MOV A, 20H
+001D E520            160               MOV A, 20H
+                     161     ;       RL A
+001F 23              162               RL A
+                     163     ;       MOV 20H, A
+0020 F520            164               MOV 20H, A
+                     165     ;   # pragma endasm
+                     166     ;   P2=cLed;
+                     167                             ; SOURCE LINE # 27
+0022 8520A0          168             MOV     P2,cLed
+                     169     ; }
+                     170                             ; SOURCE LINE # 28
+0025 D007            171             POP     AR7
+0027 D006            172             POP     AR6
+0029 D005            173             POP     AR5
+002B D004            174             POP     AR4
+002D D003            175             POP     AR3
+002F D002            176             POP     AR2
+0031 D001            177             POP     AR1
+0033 D000            178             POP     AR0
+0035 D0D0            179             POP     PSW
+0037 D082            180             POP     DPL
+0039 D083            181             POP     DPH
+003B D0F0            182             POP     B
+003D D0E0            183             POP     ACC
+003F 32              184             RETI    
+                     185     ; END OF I0
+                     186     
+                     187             END
+A51 MACRO ASSEMBLER  TEST                                                                 11/06/2019 11:20:30 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+?C0002 . . . . . .  C ADDR   0009H   R   SEG=?PR?MAIN?TEST
+?C_STARTUP . . . .  C ADDR   -----       EXT
+?PR?I0?TEST. . . .  C SEG    0040H       REL=UNIT
+?PR?INIT?TEST. . .  C SEG    0007H       REL=UNIT
+?PR?MAIN?TEST. . .  C SEG    000BH       REL=UNIT
+AC . . . . . . . .  B ADDR   00D0H.6 A   
+ACC. . . . . . . .  D ADDR   00E0H   A   
+AR0. . . . . . . .  D ADDR   0000H   A   
+AR1. . . . . . . .  D ADDR   0001H   A   
+AR2. . . . . . . .  D ADDR   0002H   A   
+AR3. . . . . . . .  D ADDR   0003H   A   
+AR4. . . . . . . .  D ADDR   0004H   A   
+AR5. . . . . . . .  D ADDR   0005H   A   
+AR6. . . . . . . .  D ADDR   0006H   A   
+AR7. . . . . . . .  D ADDR   0007H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+CLED . . . . . . .  D ADDR   0020H   A   
+CY . . . . . . . .  B ADDR   00D0H.7 A   
+DPH. . . . . . . .  D ADDR   0083H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ES . . . . . . . .  B ADDR   00A8H.4 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+ET1. . . . . . . .  B ADDR   00A8H.3 A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+EX1. . . . . . . .  B ADDR   00A8H.2 A   
+F0 . . . . . . . .  B ADDR   00D0H.5 A   
+I0 . . . . . . . .  C ADDR   0000H   R   SEG=?PR?I0?TEST
+IE . . . . . . . .  D ADDR   00A8H   A   
+IE0. . . . . . . .  B ADDR   0088H.1 A   
+IE1. . . . . . . .  B ADDR   0088H.3 A   
+INIT . . . . . . .  C ADDR   0000H   R   SEG=?PR?INIT?TEST
+INT0 . . . . . . .  B ADDR   00B0H.2 A   
+INT1 . . . . . . .  B ADDR   00B0H.3 A   
+IP . . . . . . . .  D ADDR   00B8H   A   
+IT0. . . . . . . .  B ADDR   0088H.0 A   
+IT1. . . . . . . .  B ADDR   0088H.2 A   
+MAIN . . . . . . .  C ADDR   0000H   R   SEG=?PR?MAIN?TEST
+OV . . . . . . . .  B ADDR   00D0H.2 A   
+P. . . . . . . . .  B ADDR   00D0H.0 A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+PS . . . . . . . .  B ADDR   00B8H.4 A   
+PSW. . . . . . . .  D ADDR   00D0H   A   
+PT0. . . . . . . .  B ADDR   00B8H.1 A   
+PT1. . . . . . . .  B ADDR   00B8H.3 A   
+PX0. . . . . . . .  B ADDR   00B8H.0 A   
+PX1. . . . . . . .  B ADDR   00B8H.2 A   
+RB8. . . . . . . .  B ADDR   0098H.2 A   
+RD . . . . . . . .  B ADDR   00B0H.7 A   
+REN. . . . . . . .  B ADDR   0098H.4 A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+RS0. . . . . . . .  B ADDR   00D0H.3 A   
+RS1. . . . . . . .  B ADDR   00D0H.4 A   
+RXD. . . . . . . .  B ADDR   00B0H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+A51 MACRO ASSEMBLER  TEST                                                                 11/06/2019 11:20:30 PAGE     5
+
+SM0. . . . . . . .  B ADDR   0098H.7 A   
+SM1. . . . . . . .  B ADDR   0098H.6 A   
+SM2. . . . . . . .  B ADDR   0098H.5 A   
+SP . . . . . . . .  D ADDR   0081H   A   
+T0 . . . . . . . .  B ADDR   00B0H.4 A   
+T1 . . . . . . . .  B ADDR   00B0H.5 A   
+TB8. . . . . . . .  B ADDR   0098H.3 A   
+TCON . . . . . . .  D ADDR   0088H   A   
+TEST . . . . . . .  N NUMB   -----       
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TXD. . . . . . . .  B ADDR   00B0H.1 A   
+WR . . . . . . . .  B ADDR   00B0H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
