@@ -1,0 +1,170 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/20/2019  11:37:30  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\DEV\KEIL\C51\BIN\BL51.EXE STARTUP.obj, uart8051.obj, main.obj TO com8051
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  uart8051.obj (UART8051)
+  main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  com8051 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0016H     UNIT         ?PR?INITCOM?UART8051
+            CODE    0019H     000DH     UNIT         ?PR?MAIN?MAIN
+            CODE    0026H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0032H     0008H     UNIT         ?PR?_COMSENDCHAR?UART8051
+            CODE    003AH     0008H     UNIT         ?PR?COMGETCHAR?UART8051
+
+
+
+OVERLAY MAP OF MODULE:   com8051 (?C_STARTUP)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                     0008H    0001H
+  +--> ?PR?INITCOM?UART8051
+  +--> ?PR?COMGETCHAR?UART8051
+  +--> ?PR?_COMSENDCHAR?UART8051
+
+
+
+SYMBOL TABLE OF MODULE:  com8051 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0026H         SEGMENT       ?C_C51STARTUP
+  I:0009H         SEGMENT       ?STACK
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/20/2019  11:37:30  PAGE 2
+
+
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0029H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0026H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0026H         LINE#         133
+  C:0028H         LINE#         134
+  C:0029H         LINE#         135
+  C:002AH         LINE#         136
+  C:002CH         LINE#         185
+  C:002FH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        UART8051
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  C:0032H         PUBLIC        _comSendChar
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  C:0003H         PUBLIC        initCom
+  C:003AH         PUBLIC        comGetChar
+  -------         PROC          INITCOM
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0006H         LINE#         7
+  C:0009H         LINE#         8
+  C:000CH         LINE#         9
+  C:000FH         LINE#         10
+  C:0012H         LINE#         11
+  C:0014H         LINE#         12
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/20/2019  11:37:30  PAGE 3
+
+
+  C:0016H         LINE#         13
+  C:0018H         LINE#         14
+  -------         ENDPROC       INITCOM
+  -------         PROC          _COMSENDCHAR
+  D:0007H         SYMBOL        ch
+  C:0032H         LINE#         16
+  C:0032H         LINE#         17
+  C:0032H         LINE#         18
+  C:0034H         LINE#         19
+  C:0037H         LINE#         20
+  C:0039H         LINE#         21
+  -------         ENDPROC       _COMSENDCHAR
+  -------         PROC          COMGETCHAR
+  -------         DO            
+  D:0007H         SYMBOL        DATA
+  -------         ENDDO         
+  C:003AH         LINE#         23
+  C:003AH         LINE#         24
+  C:003AH         LINE#         27
+  C:003DH         LINE#         28
+  C:003FH         LINE#         29
+  C:0041H         LINE#         30
+  C:0041H         LINE#         31
+  -------         ENDPROC       COMGETCHAR
+  -------         ENDMOD        UART8051
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0019H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        ch
+  -------         ENDDO         
+  C:0019H         LINE#         4
+  C:0019H         LINE#         5
+  C:0019H         LINE#         6
+  C:001CH         LINE#         8
+  C:001CH         LINE#         9
+  C:001CH         LINE#         10
+  C:0021H         LINE#         11
+  C:0024H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=10.0 xdata=0 code=66
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

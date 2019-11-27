@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>demo04</OutputName>
+          <OutputName>demo</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -347,14 +347,24 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>STARTUP.A51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\STARTUP.A51</FilePath>
+              <FileName>key4x4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\key4x4.c</FilePath>
             </File>
             <File>
-              <FileName>mainX.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\mainX.c</FilePath>
+              <FilePath>.\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Header</GroupName>
+          <Files>
+            <File>
+              <FileName>key4x4.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\key4x4.h</FilePath>
             </File>
           </Files>
         </Group>

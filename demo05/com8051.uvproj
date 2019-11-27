@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>demo04</OutputName>
+          <OutputName>com8051</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -352,9 +352,19 @@
               <FilePath>.\STARTUP.A51</FilePath>
             </File>
             <File>
-              <FileName>mainX.c</FileName>
+              <FileName>uart8051.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart8051.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart8051.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\mainX.c</FilePath>
+              <FilePath>.\uart8051.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
             </File>
           </Files>
         </Group>

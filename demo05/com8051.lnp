@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"uart8051.obj",
+"main.obj" 
+TO "com8051" 
