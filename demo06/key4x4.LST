@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   KEY4X4                                                                11/27/2019 19:48:24 PAGE 1   
+C51 COMPILER V9.01   KEY4X4                                                                11/27/2019 20:10:36 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE KEY4X4
@@ -9,75 +9,78 @@ line level    source
 
    1          #include <reg51.h>
    2          
-   3          //--------------------------------------------------------------------------
-   4          //以下是key4x4部分的变量定义
-   5                  #define KEYPORT P1
-   6                  char code Key4x4code[4][4]={'0','1','2','3','4','5','6','7',
-   7                                                                          '8','9','.','-',' ','\b','\r','\n'};
-   8          //--------------------------------------------------------------------
-   9          void _delayms(int ms)
-  10          {
-  11   1              unsigned char i;
-  12   1              while(ms--)
-  13   1                      for(i=0;i<110;i++);
-  14   1      }
-  15          //------------------------------------------------------------------
-  16          //获取键盘的ascii码，没有键按下返回0
-  17          char key4x4_getkey()
-  18          {
-  19   1              unsigned char  row,jol;
-  20   1              unsigned int tem;
-  21   1          KEYPORT=0x0f;
-  22   1              if(KEYPORT!=0x0f)
-  23   1              {
-  24   2                      _delayms(30);
-  25   2                      KEYPORT=0x0f;
-  26   2                      tem=KEYPORT;
-  27   2                      if(tem!=0x0f)//确定有键按下
-  28   2                      {
-  29   3                              for(row=0;row<4;row++)
-  30   3                              {
-  31   4                                if((tem&0x01)==0)
-  32   4                                                      break;
-  33   4                                      tem=tem>>1;
-  34   4                              }
-  35   3                              KEYPORT=0xF0;
-  36   3                              tem=KEYPORT;
-  37   3                              for(jol=0;jol<4;jol++)
-  38   3                              {
-  39   4                                      if((tem&0x10)==0)
-  40   4                                              break;
-  41   4                                      tem=tem>>1;
-  42   4                              }
-  43   3                              tem=0;
-  44   3                              while((tem<50)&&(KEYPORT!=0xF0))
-  45   3                              {
-  46   4                                      _delayms(30);
-  47   4                                      tem++;
-  48   4                              }
-  49   3                        return Key4x4code[row][jol];
-  50   3                      }
-  51   2                      else//干扰
-  52   2                              return 0;
-  53   2              }
-  54   1              else//没有键按下
-  55   1                      return 0;
-C51 COMPILER V9.01   KEY4X4                                                                11/27/2019 19:48:24 PAGE 2   
+   3          //以下是key4x4部分的变量定义
+   4          #define KEYPORT P1
+   5          char code Key4x4code[4][4]={'0','1','2','3','4','5','6','7',
+   6                                                                  '8','9','.','-',' ','\b','\r','\n'};
+   7          
+   8          /*
+   9           延时
+  10          */
+  11          void _delayms(int ms)
+  12          {
+  13   1              unsigned char i;
+  14   1              while(ms--)
+  15   1                      for(i=0;i<110;i++);
+  16   1      }
+  17          
+  18          /*
+  19           获取键盘的ascii码，没有键按下返回0
+  20          */
+  21          char key4x4_getkey()
+  22          {
+  23   1              unsigned char row,col;
+  24   1              unsigned int tem;
+  25   1          KEYPORT=0x0f;
+  26   1              if(KEYPORT!=0x0f)
+  27   1              {
+  28   2                      _delayms(30);
+  29   2                      KEYPORT=0x0f;
+  30   2                      tem=KEYPORT;
+  31   2                      if(tem!=0x0f)//确定有键按下
+  32   2                      {
+  33   3                              for(row=0; row<4; row++)
+  34   3                              {
+  35   4                                      if((tem&0x01)==0) break;
+  36   4                                      tem=tem>>1;
+  37   4                              }
+  38   3                              KEYPORT=0xF0;
+  39   3                              tem=KEYPORT;
+  40   3                              for(col=0; col<4; col++)
+  41   3                              {
+  42   4                                      if((tem&0x10)==0) break;
+  43   4                                      tem=tem>>1;
+  44   4                              }
+  45   3                              tem=0;
+  46   3                              while((tem<50)&&(KEYPORT!=0xF0))
+  47   3                              {
+  48   4                                      _delayms(30);
+  49   4                                      tem++;
+  50   4                              }
+  51   3                        return Key4x4code[row][col];
+  52   3                      }
+  53   2                      else//干扰
+  54   2                              return 0;
+  55   2              }
+C51 COMPILER V9.01   KEY4X4                                                                11/27/2019 20:10:36 PAGE 2   
 
-  56   1      }
-  57          //---------------------------------------------------------
-  58          //连接输入格式化流，实现格式化流输入的关键
-  59          char WaitGetKey()
-  60          {
-  61   1              char tem;
-  62   1              while(1)
-  63   1              {
-  64   2                      tem=key4x4_getkey();
-  65   2                      if(tem!=0)
-  66   2                       return tem;
-  67   2              }
-  68   1      } 
-  69          //**********************************************************
+  56   1              else//没有键按下
+  57   1                      return 0;
+  58   1      }
+  59          
+  60          /*
+  61           连接输入格式化流，实现格式化流输入的关键
+  62          */
+  63          char WaitGetKey()
+  64          {
+  65   1              char tem;
+  66   1              while(1)
+  67   1              {
+  68   2                      tem=key4x4_getkey();
+  69   2                      if(tem!=0)
+  70   2                       return tem;
+  71   2              }
+  72   1      } 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE

@@ -3,6 +3,7 @@
 
 //获取键盘的ascii码，没有键按下返回0
 char key4x4_getkey();
-char WaitGetKey();//block
+//block
+char WaitGetKey();
 
 #endif

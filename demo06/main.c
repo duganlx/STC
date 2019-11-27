@@ -2,8 +2,7 @@
 #include "key4x4.h"
 void main()
 {
-  char tem;
+	char tem;
 	tem=WaitGetKey();
 	P2=tem;
-	
 }

@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        11/27/2019  19:48:25  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/27/2019  20:10:36  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -59,7 +59,7 @@ SEGMENT
 SYMBOL TABLE OF MODULE:  demo (KEY4X4)
 
   VALUE           TYPE          NAME
-BL51 BANKED LINKER/LOCATER V6.22                                                      11/27/2019  19:48:25  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/27/2019  20:10:36  PAGE 2
 
 
   ----------------------------------
@@ -76,71 +76,69 @@ SYMBOL TABLE OF MODULE:  demo (KEY4X4)
   -------         DO            
   D:0005H         SYMBOL        i
   -------         ENDDO         
-  C:0099H         LINE#         9
-  C:0099H         LINE#         10
+  C:0099H         LINE#         11
   C:0099H         LINE#         12
-  C:00A3H         LINE#         13
-  C:00AEH         LINE#         14
+  C:0099H         LINE#         14
+  C:00A3H         LINE#         15
+  C:00AEH         LINE#         16
   -------         ENDPROC       __DELAYMS
   -------         PROC          KEY4X4_GETKEY
   -------         DO            
   D:0004H         SYMBOL        row
-  D:0003H         SYMBOL        jol
+  D:0003H         SYMBOL        col
   D:0082H         SYMBOL        tem
   -------         ENDDO         
-  C:0003H         LINE#         17
-  C:0003H         LINE#         18
   C:0003H         LINE#         21
-  C:0006H         LINE#         22
-  C:000FH         LINE#         23
-  C:000FH         LINE#         24
-  C:0016H         LINE#         25
-  C:0019H         LINE#         26
-  C:0020H         LINE#         27
-  C:0026H         LINE#         28
-  C:0026H         LINE#         29
-  C:0028H         LINE#         30
-  C:0028H         LINE#         31
-  C:002DH         LINE#         32
-  C:002DH         LINE#         33
-  C:0038H         LINE#         34
-  C:003CH         LINE#         35
-  C:003FH         LINE#         36
-  C:0046H         LINE#         37
-  C:0048H         LINE#         38
-  C:0048H         LINE#         39
-  C:004DH         LINE#         40
-  C:004DH         LINE#         41
-  C:0058H         LINE#         42
-  C:005CH         LINE#         43
-  C:0061H         LINE#         44
-  C:0067H         LINE#         45
-  C:0067H         LINE#         46
-  C:006EH         LINE#         47
-  C:006FH         LINE#         48
-  C:0077H         LINE#         49
-BL51 BANKED LINKER/LOCATER V6.22                                                      11/27/2019  19:48:25  PAGE 3
-
-
-  C:0093H         LINE#         50
+  C:0003H         LINE#         22
+  C:0003H         LINE#         25
+  C:0006H         LINE#         26
+  C:000FH         LINE#         27
+  C:000FH         LINE#         28
+  C:0016H         LINE#         29
+  C:0019H         LINE#         30
+  C:0020H         LINE#         31
+  C:0026H         LINE#         32
+  C:0026H         LINE#         33
+  C:0028H         LINE#         34
+  C:0028H         LINE#         35
+  C:002DH         LINE#         36
+  C:0038H         LINE#         37
+  C:003CH         LINE#         38
+  C:003FH         LINE#         39
+  C:0046H         LINE#         40
+  C:0048H         LINE#         41
+  C:0048H         LINE#         42
+  C:004DH         LINE#         43
+  C:0058H         LINE#         44
+  C:005CH         LINE#         45
+  C:0061H         LINE#         46
+  C:0067H         LINE#         47
+  C:0067H         LINE#         48
+  C:006EH         LINE#         49
+  C:006FH         LINE#         50
+  C:0077H         LINE#         51
   C:0093H         LINE#         52
-  C:0096H         LINE#         53
+  C:0093H         LINE#         54
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/27/2019  20:10:36  PAGE 3
+
+
   C:0096H         LINE#         55
-  C:0098H         LINE#         56
+  C:0096H         LINE#         57
+  C:0098H         LINE#         58
   -------         ENDPROC       KEY4X4_GETKEY
   -------         PROC          WAITGETKEY
   -------         DO            
   D:0007H         SYMBOL        tem
   -------         ENDDO         
-  C:00CBH         LINE#         59
-  C:00CBH         LINE#         60
-  C:00CBH         LINE#         62
   C:00CBH         LINE#         63
   C:00CBH         LINE#         64
-  C:00CEH         LINE#         65
-  C:00D1H         LINE#         66
-  C:00D1H         LINE#         67
-  C:00D1H         LINE#         68
+  C:00CBH         LINE#         66
+  C:00CBH         LINE#         67
+  C:00CBH         LINE#         68
+  C:00CEH         LINE#         69
+  C:00D1H         LINE#         70
+  C:00D1H         LINE#         71
+  C:00D1H         LINE#         72
   -------         ENDPROC       WAITGETKEY
   -------         ENDMOD        KEY4X4
 
@@ -156,7 +154,7 @@ SYMBOL TABLE OF MODULE:  demo (KEY4X4)
   C:00D2H         LINE#         4
   C:00D2H         LINE#         6
   C:00D5H         LINE#         7
-  C:00D7H         LINE#         9
+  C:00D7H         LINE#         8
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
